@@ -1,3 +1,34 @@
+# このフォークについて
+meditさんのAddonUECをフォークしたものです。
+拡張機能がmanifest v2のためGoogle Chromeで使えなくなったので、manifest v3に対応させました。
+Chrome用フォルダしかいじっていません。
+
+## 【注意】
+当方jsの基礎すらわからない人間です。拡張機能をいじるのも初めてです。
+**バグがあっても直せません。**
+あなたが直してね！
+
+## 変更点
+### campusweb.js
+- （機能追加）開講所属を0番目にした場合、シラバス検索の開講所属をデフォルトのままにするよう機能追加。
+### init.js
+- （変更）コメントを追加。動作に変更なし。
+### manifest.json
+- （変更）manifest_versionを2から3に。
+- （変更）backgroundをscriptsからservice_workerに。
+- （追加）web_accessible_resourcesを追加。
+### options.html
+- （変更）開講所属の初期値のminを1から0に。
+- （変更）0番目について書き足し。
+### webclass.js, webclass_script.js
+- （変更）web_accessible_resourcesでスクリプトを追加するように変更。
+  - scriptタグをappendChildするのはCSPでエラーになる。
+- （追加）webclass_script.jsを作成し、injectCordをwebclass_script.jsに移設。
+### options.js, otp.js
+- 変更なし
+
+**=====以下AddonUECのれあどめ=====**
+
 # AddonUEC
 学務情報システムなどの不便を解消する電通大生専用拡張機能
 
