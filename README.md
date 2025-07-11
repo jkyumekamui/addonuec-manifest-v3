@@ -20,10 +20,11 @@ Chrome用フォルダしかいじっていません。
 ### manifest.json
 - （変更）manifest_versionを2から3に。
 - （変更）backgroundをscriptsからservice_workerに。
+  - background.scriptはv3では動かない。
 - （追加）web_accessible_resourcesを追加。
 ### options.html
-- （変更）開講所属の初期値のminを1から0に。
-- （変更）0番目について書き足し。
+- （機能変更）開講所属の初期値のminを1から0に。
+- （機能変更）0番目の説明文を追加。
 ### webclass.js, webclass_script.js
 - （変更）web_accessible_resourcesでスクリプトを追加するように変更。
   - scriptタグをappendChildするのはCSPでエラーになる。
