@@ -34,8 +34,13 @@ if(document.title.startsWith("シラバス参照")){
 		chrome.storage.local.get("shozoku", item => {
 			var index = item.shozoku - 1;
 			var shozokuList = document.getElementById("jikanwariShozokuCode");
-			if(!shozokuList[index]) index = 0;
-			shozokuList.selectedIndex = index;
+			// 改造：0番目では何もしないように変更
+			if(index !== -1){
+				if (!shozokuList[index]) {
+					index = 0;
+				}
+				shozokuList.selectedIndex = index;
+			}
 		});
 		document.getElementById("jikanwariInputForm")[6].type = "submit";
 		document.getElementById("jikanwariSearchForm")[15].type = "submit";

@@ -1,0 +1,11 @@
+2025/07/12
+元々はこれ
+=====
+"background": {
+    "scripts": ["init.js"]
+},
+=====
+manifest v3では動かないのでservice_workerに変更
+
+webclassに"webclass_script.js"を追加
+"web_accessible_resources"を追加

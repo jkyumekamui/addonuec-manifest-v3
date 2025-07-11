@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "AddonUEC",
 	"author": "medit",
 	"version": "1.3.0",
@@ -13,7 +13,7 @@
 	"content_scripts": [
 		{
 			"matches": ["*://webclass.cdel.uec.ac.jp/", "*://webclass.cdel.uec.ac.jp/index.html"],
-			"js": ["webclass.js"]
+			"js": ["webclass.js", "webclass_script.js"]
 		},
 		{
 			"matches": ["*://campusweb.office.uec.ac.jp/campusweb/campussquare.do?*"],
@@ -27,7 +27,7 @@
 	],
 
 	"background": {
-		"scripts": ["init.js"]
+		"service_worker": "init.js"
 	},
 
 	"options_ui": {
@@ -35,5 +35,16 @@
 		"browser_style": true
 	},
 
-	"permissions": ["storage"]
+	"permissions": ["storage"],
+
+	"web_accessible_resources": [
+        {
+            "resources": [
+                "webclass_script.js"
+            ],
+            "matches": [
+                "*://webclass.cdel.uec.ac.jp/*"
+            ]
+        }
+    ]
 }
